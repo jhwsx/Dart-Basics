@@ -23,6 +23,10 @@ void main() {
 
   EffectiveDoer effectiveDoer = new EffectiveDoer();
   effectiveDoer.doSomething();
+  
+  var list = <int>[1,2,3];
+  var reduce = list.reduce((value, element) => value + element);
+  print(reduce);
 }
 
 class Point {
@@ -43,6 +47,13 @@ class Rectangle {
 
   Rectangle(this.left, this.top, this.width, this.height);
 
+  // 检查属性值是否有效
+  set _left(num value) {
+    if (value >= 0) {
+      left = value;
+    }
+  }
+
   // 定义两个计算属性：right 和 bottom
   num get right => left + width;
   set right(num value) => left = value - width;
@@ -60,4 +71,19 @@ class EffectiveDoer extends Doer {
     print('Practice makes perfect.');
   }
 
+}
+
+class ShoppingCart {
+  List<double> _prices = [];
+
+  double get total => _prices.fold(0, (e, t) => e + t);
+
+  double get total2 => _prices.reduce((value, element) => value + element);
+  set prices(List<double> value) {
+    if (value.any((p) => p < 0)) {
+      throw Exception();
+    }
+
+    _prices = value;
+  }
 }

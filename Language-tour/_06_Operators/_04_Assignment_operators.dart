@@ -1,4 +1,4 @@
-// ??= 这个比较新
+// ??= 这个叫做 Null-aware 赋值操作符，这个比较新
 void main() {
   var a;
   var b = 5;

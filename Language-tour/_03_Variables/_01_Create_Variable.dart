@@ -19,6 +19,14 @@ void main() {
   print(name3);
   print(name4);
 
+  // dynamic vs Object：
+  // dynamic声明的对象编译器会提供所有可能的组合, 而Object声明的对象只能使用Object的属性与方法, 否则编译器会报错。
+  dynamic t;
+  Object x;
 
+  t = 'Hello World';
+  x = 'Hello World';
 
+  print(t.length); // ok
+  // print(x.length); // 编译错误： The getter 'length' isn't defined for the type 'Object'.
 }

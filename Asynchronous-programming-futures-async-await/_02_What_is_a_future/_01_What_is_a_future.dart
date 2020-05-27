@@ -1,5 +1,5 @@
 // 什么是 future？
-// 1, 一个 future 是 Future 类的一个实例；
+// 1, 一个 future 是 Future 类的一个实例, 一个 Future<T> 的实例产生一个类型为 T 的值。
 // 2, 一个 future 代表了异步操作的结果，它有两种状态：uncompleted 或 completed。
 // 3, uncompleted 是一个 Dart 术语，指的是一个 future 产生一个值之前的状态。
 // 4, uncompleted：当调用一个异步函数，这个函数就会返回一个 uncompleted 的 future。

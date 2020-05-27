@@ -7,6 +7,7 @@ void main() {
   var loudify = (msg) => '!!! ${msg.toUpperCase()}!!!';
   print(loudify('hello'));
 
+  // 计算 1 到 100 的整数和
   var sum = (number) {
     var result = 0;
     for (var i = 1; i <= number; i++) {

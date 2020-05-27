@@ -25,6 +25,8 @@ void main() {
   const list = [i as int]; // 使用类型转换
   const map = {if (i is int) i: "int"};
   const set = {if (list is List<int>) ...list};
+  print('map=$map');
+  print('set=$set');
 }
 
 class Test {

@@ -5,7 +5,15 @@
     await 关键字仅仅作用在有 async 关键字的函数里。
 3,  使用 await 关键字来得到异步表达式的 completed 结果。
 4,  如果在函数里使用了 await 关键字，那么就必须在函数体前加上 async 关键字。
+5,  异步函数就是带有 label 关键字标签的函数。
+6,  使用 await 关键字获取异步表达式的完成结果。
+7,  An async function runs synchronously until the first await keyword. This means that within an async function body,
+all synchronous code before the first await keyword executes immediately.
  */
+
+
+
+
 // 从同步函数改造而来：
 /*
 String createOrderMessage() {
@@ -34,6 +42,13 @@ Future<String> fetchUserOrder() {
   // Creates a future that runs its computation after a delay.
   return Future.delayed(Duration(seconds: 4), () => 'Large Latte');
 }
+// TODO 为什么不写成下面的样子呢？
+/*
+Future<String> fetchUserOrder() async {
+  // Creates a future that runs its computation after a delay.
+  return await Future.delayed(Duration(seconds: 4), () => 'Large Latte');
+}
+*/
 // 这里把 main 函数的返回值改为 Future<void>, 是因为现在 main 是一个异步函数
 // （它有 async 关键字在函数体前面），异步函数没有有用的返回值，就写成 Future<void>
 Future<void> main() async {

@@ -5,6 +5,7 @@ void main() {
   // 使用 paramName: value 来确定命名参数
   enableFlags(bold: true, hidden: false);
   show('wang', age: 18); // 可以隔着输入命名参数
+  show('wang'); // 警告：The parameter 'age' is required.
 
   show3('wang');
   // show3('wang', 18); // 编译报错：类型不对。不能隔着输入位置参数

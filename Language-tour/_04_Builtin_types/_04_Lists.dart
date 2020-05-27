@@ -1,4 +1,4 @@
-// 在 Dart 中，数组是 List 对象
+// 在 Dart 中，数组是 List 对象date the type to be Future<T>
 void main() {
   var list = [1, 2, 3]; // Dart 推断 list 的类型是 List<int>
   List<int> _list = [1, 2, 3];

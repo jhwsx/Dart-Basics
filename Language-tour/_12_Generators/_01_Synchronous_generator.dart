@@ -13,6 +13,7 @@ void main() {
   for (var value in generator) {
     print(value);
   }
+  print('end of main');
 }
 // 打印结果表明：
 // 1, 在迭代的时候才产生值
@@ -31,8 +32,8 @@ end
  */
 
 Iterable<int> naturalsTo(int n) sync* {
-  print('start');
+  print('naturalsTo start');
   int k = 0;
   while (k < n) yield k++;
-  print('end');
+  print('naturalsTo end');
 }

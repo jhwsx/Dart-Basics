@@ -1,5 +1,7 @@
 // 数值类型分两种：int 和 double
 // int 和 double 都是 num 的子类型
+// int 不能超过 64 位。在 Dart VM 上，取值范围 -2^63 to 2^63 - 1; 编译成 Javascript 会使用 Javascript 数字，范围：-2^53 to 2^53 - 1
+// double 是64 位（双精度）浮点数，由 IEEE754 标准指定。
 // num 里有基本运算符，以及一些数值相关方法，dart:math 库有更多。
 void main() {
   // 定义整型
@@ -35,10 +37,10 @@ void main() {
   assert(piAsString == '3.14');
 
   // int 类型里定义了位运算符
-  assert((3 << 1) == 6);
-  assert((3 >> 1) == 1);
-  assert((3 | 4) == 7);
-  assert((3 & 4) == 0 );
+  assert((3 << 1) == 6); // 按位左移
+  assert((3 >> 1) == 1); // 按位右移
+  assert((3 | 4) == 7); // 按位或
+  assert((3 & 4) == 0 ); // 按位与
 
   // 常量
   const timeInterval = 5000;

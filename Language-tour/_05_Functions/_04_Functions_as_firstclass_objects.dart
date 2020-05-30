@@ -4,7 +4,7 @@ void main() {
   list.forEach(printElement);
   
   // 把函数赋值给一个变量
-  var loudify = (msg) => '!!! ${msg.toUpperCase()}!!!';
+  var loudify = (msg) => '!!! ${msg.toUpperCase()}!!!'; // 这是匿名函数的写法
   print(loudify('hello'));
 
   // 计算 1 到 100 的整数和

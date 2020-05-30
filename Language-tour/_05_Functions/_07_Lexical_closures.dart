@@ -2,7 +2,11 @@
 // 闭包定义在其他函数内部
 // 闭包能够访问外部函数内的局部变量，并持有其状态
 void main() {
+  print(add); // Closure: () => void from Function 'add': static.
+  print(add.runtimeType); // () => void
+
   var add2 = makeAdder(2);
+  print(add2.runtimeType); // (num) => num
   print(add2); // Closure: (num) => num
   var add4 = makeAdder(4);
   print(add4); // Closure: (num) => num
@@ -15,6 +19,10 @@ void main() {
 
   var makeSum2 = makeSum(10);
   assert(makeSum2() == 55);
+
+}
+
+void add() {
 
 }
 // 返回值是一个 Function，给这个函数的参数添加一个 addBy 的值。

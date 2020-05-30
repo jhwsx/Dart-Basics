@@ -1,5 +1,20 @@
 // 继承一个类
 // 1, 使用 extends 关键字来创建一个子类，super 关键字指向超类。
+// 2, 重写成员：子类可以重写成员方法，getter 和 setter 方法。
+// 3, 可重写的操作符
+//     <	 +	 |	 []
+//     >	 /	 ^	 []=
+//     <=	 ~/	 &	 ~
+//     >=	 *	 <<	 ==
+//     –	 %	 >>
+// 4, noSuchMethod
+//You can’t invoke an unimplemented method unless one of the following is true:
+//
+//The receiver has the static type dynamic.
+//
+//The receiver has a static type that defines the unimplemented method (abstract is OK),
+// and the dynamic type of the receiver has an implemention of noSuchMethod() that’s different from the one in class Object.
+
 void main() {
   var human = Human();
   human.doSomething();
@@ -17,9 +32,12 @@ void main() {
 
   print('*' * 30);
 
-  var a = new A();
-  // a.xxx;
-  a.missing(18, 'wzc');
+  // 触发 noSuchMethod() 方法
+  // 如果 A 中没有重写 onSuchMethod() 方法，那么就抛出异常。
+  dynamic a = A();
+  a.notExistMethod();
+
+  a.missing(1, "a");
 }
 
 class Human {
@@ -75,7 +93,6 @@ class Vector {
   @override
   int get hashCode => x.hashCode ^ y.hashCode;
 }
-// todo 不理解
 class A {
   // https://stackoverflow.com/questions/53761294/nosuchmethod-in-dart
   @override

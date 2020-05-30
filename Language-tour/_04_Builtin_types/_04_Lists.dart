@@ -1,15 +1,17 @@
-// 在 Dart 中，数组是 List 对象date the type to be Future<T>
+// 在 Dart 中，数组是 List 对象
 void main() {
   var list = [1, 2, 3]; // Dart 推断 list 的类型是 List<int>
   List<int> _list = [1, 2, 3];
 
   // list.add('hello'); // 编译报错：The argument type 'String' can't be assigned to the parameter type 'int'.
 
+  // 常用的 api 调用演示：
   assert(list.length == 3);
 
-  assert(list[0] == 1);
+  assert(list[0] == 1); // 索引从 0 开始。
   assert(list[1] == 2);
-  assert(list[2] == 3);
+  assert(list[2] == 3); // 索引到 length - 1 结束。
+  // assert(list[3] == 3); // 运行时抛出异常：RangeError (index): Invalid value: Not in range 0..2, inclusive: 3
 
   assert(list.isEmpty == false);
 
@@ -20,7 +22,7 @@ void main() {
 
   // Dart 2.3 introduced the spread operator (...) and the null-aware spread operator (...?),
   // which provide a concise way to insert multiple elements into a collection.
-
+  // 展开语法，空检查展开语法：用于把多个元素插入集合的一种简洁方式。
   var list1 = [1, 2, 3];
   var list2 = [0, ...list1];
   assert(list2.length == 4); // 通过

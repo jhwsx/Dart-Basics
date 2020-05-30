@@ -8,11 +8,16 @@ void main() {
   const double salary = 20.5;
   // age = 11; // Constant variables can't be assigned a value.
 
-  // TODO 不理解
-  // const 用于创建常量值
-  var foo = const [];
-  final bar = const [];
-  const baz = []; // 这是一种省略写法，Equivalent to `const []`
+  const x = 100000;
+  const double atm = 1.01325 * x; // 这种也是常量，因为这是常量 x 的算术运算结果。
+
+  // const 不仅仅用于声明常量变量，也可以用于创建常量值，还有用于创建常量的构造器
+  // 任何变量都可以有一个常量值。
+  var foo = const []; // 含义：foo 变量指向了空的列表常量。foo 的类型被推断为 List<dynamic>, 因为这里没有元素。
+  var foo1 = const [1]; // 含义：foo1 变量指向了列表常量。foo1 的类型被推断为 List<int>, 因为这里有元素。
+  final bar = const [];// 含义：一个不可变的 bar 变量指向了空的列表常量。注意 bar 被 final 修饰了，它不可以再指向其他值了。
+  const baz = []; // 这是一种省略写法，Equivalent to `const []`，等价于下面的一行。
+  const baz1 = const [];
 
   foo = [1, 2, 3]; // 虽然 foo 曾经指向了 const 的值，但是 foo 不是 final 的，也不是 const 的，所以可以改变它的值。
   // baz = [42]; // Error：Constant variables can't be assigned a value.
@@ -28,7 +33,7 @@ void main() {
   print('map=$map');
   print('set=$set');
 }
-
+final topLevelVariable = 6;
 class Test {
   final a = 5;
   // const b = 6; // Only static fields can be declared as const.

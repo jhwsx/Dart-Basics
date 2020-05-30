@@ -54,6 +54,6 @@ void main() {
   // 插值表达式需要是编译期常量，等于 null，数值，String 或者 boolean。
   const validConstString = '$NUM $FLAG $NAME';
   var a = 1;
-
+  // 这不是字符串常量。
   // const invalidConstString = '$a'; // Error：Const variables must be initialized with a constant value.
 }

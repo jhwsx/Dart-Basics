@@ -1,8 +1,12 @@
 // 构造器
-// 如果没有自定义构造器，就有一个默认的无参数的构造器；
-// 如果有自定义构造器，则默认的无参数构造器无效；
-// 构造方法不能重载。
-
+// 1, 使用构造器来创建一个对象;
+// 2, 构造器的名字要么是类名要么是类名.标识符;
+// 3, 如果没有自定义构造器，就有一个默认的无参数的构造器；
+// 4, 如果有自定义构造器，则默认的无参数构造器无效；
+// 5, 构造方法不能重载。
+// 6, 一些类可以提供常量构造器，使用常量构造器可以创建一个编译器常量。
+//    做法：在构造器名字前加 const 关键字，把字段写成 final 的。
+//          在创建编译器常量时，调用构造器前面加 const。
 void main() {
   var p1 = Point(2, 2);
   print(p1);
@@ -16,9 +20,27 @@ void main() {
   print(p4);
 
   // 常量构造器
-  const immutalbePoint1 = ImmutablePoint(1, 1);
-  const immutalbePoint2 = ImmutablePoint(1, 1);
+  const immutalbePoint1 = const ImmutablePoint(1, 1);
+  const immutalbePoint2 = const ImmutablePoint(1, 1);
   assert(identical(immutalbePoint1, immutalbePoint2)); // 一样的。
+
+  // 在常量上下文里，构造器前的 const 可以省略
+  const pointAndLine1 = {
+    'point': const [const ImmutablePoint(0, 0)],
+    'line' : const [const ImmutablePoint(1, 1), const ImmutablePoint(2, 2)]
+  };
+  // 省略 const 的写法：
+  const pointAndLine2 = {
+    'point': [ImmutablePoint(0, 0)],
+    'line': [ImmutablePoint(1, 1), ImmutablePoint(2, 2)]
+  };
+  // 但是如果没有常量上下文，省略了 const，就不能创建编译器常量了
+  var pointAndLine3 = {
+    'point': [ImmutablePoint(0, 0)],
+    'line': [ImmutablePoint(1, 1), ImmutablePoint(2, 2)]
+  };
+  assert(identical(pointAndLine1, pointAndLine2)); // pass
+  assert(!identical(pointAndLine2, pointAndLine3)); // pass
 }
 
 class Point {
@@ -40,7 +62,7 @@ class Point {
 }
 
 class ImmutablePoint {
-  final int x;
+  final int x; // 如果不加final，那么编译报错：Can't define a const constructor for a class with non-final fields.
   final int y;
 
   const ImmutablePoint(this.x, this.y);

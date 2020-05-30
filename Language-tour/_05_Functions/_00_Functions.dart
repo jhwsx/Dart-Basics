@@ -3,11 +3,11 @@
 
 void main() {
   print(isOdd.runtimeType); // (int) => bool
-  Function isOddFuntion = isOdd;
+  Function isOddFuntion = isOdd; // 函数的类型是 Function。
   print(isOddFuntion.runtimeType); // (int) => bool
 
-  var even = isEven(5); // 返回值当作 dynamic 处理。
-  print(even.runtimeType);
+  var even = isEven(5); // 返回值推断为 dynamic，运行时类型就是 bool。
+  print(even.runtimeType); // bool
 }
 
 
@@ -20,6 +20,6 @@ isEven(number) {
   return number % 2 == 0;
 }
 
-// 如果函数仅仅包含一个表达式，可以使用 shorthand 语法
+// 如果函数仅仅包含一个表达式，可以使用简便的语法
 bool isZero(int number) => number == 0;
 // => expr 语法是 { return expr; } 的一种简写。=> 标记有时被成为箭头语法。

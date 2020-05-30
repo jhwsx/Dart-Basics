@@ -4,6 +4,8 @@ void main() {
   print('The type of x is ${x.runtimeType}'); // The type of x is int
   var y = 1.0;
   print(y.runtimeType); // double
+  var b = true;
+  print(b.runtimeType); // bool
   var a = 'Hello';
   print(a.runtimeType); // String
   var list = [1, 2, 3];
@@ -12,4 +14,12 @@ void main() {
   print(set.runtimeType); // _CompactLinkedHashSet<int>
   var map = {1: 'one', 2: 'two'};
   print(map.runtimeType); // _InternalLinkedHashMap<int, String>
+  var nullVariable;
+  print(nullVariable.runtimeType); // Null
+  var person = Person();
+  print(person.runtimeType); // Person
+}
+
+class Person {
+
 }

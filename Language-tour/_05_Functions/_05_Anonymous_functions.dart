@@ -4,6 +4,8 @@
 ([[Type] param1[, …]]) {
 codeBlock;
 };
+1, 参数的类型可以省略;
+2, 参数的个数可以是0 个或者多个
 */
 void main() {
   var list = ['apples', 'bananas', 'oranges'];
@@ -15,4 +17,9 @@ void main() {
   list.forEach(
       (item) => print('${list.indexOf(item)}: $item')
   );
+
+  var f = () {
+    print('Hello, lambda');
+  };
+  f(); // 执行匿名函数
 }

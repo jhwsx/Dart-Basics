@@ -1,4 +1,4 @@
-// 本地扩展方法
+// 本地扩展方法的两种创建方法
 void main() {
   print('42'.parseIntLocal());
   print('3.14'.parseDoubleLocal());

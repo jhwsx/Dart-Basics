@@ -2,7 +2,7 @@
 // Set 类型
 void main() {
   // Dart 推断 cities 的类型是 Set<String>
-  var cities = {'beijing', 'shanghai', 'guangzhou', 'shezhen'};
+  var cities = {'beijing', 'shanghai', 'guangzhou', 'shenzhen'};
 
   // cities.add(1314); // 编译报错：The argument type 'int' can't be assigned to the parameter type 'String'.
 

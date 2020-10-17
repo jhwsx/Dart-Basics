@@ -20,9 +20,12 @@ void main() {
   print(p4);
 
   // 常量构造器
-  const immutalbePoint1 = const ImmutablePoint(1, 1);
-  const immutalbePoint2 = const ImmutablePoint(1, 1);
-  assert(identical(immutalbePoint1, immutalbePoint2)); // 一样的。
+  const immutablePoint1 = const ImmutablePoint(1, 1);
+  const immutablePoint2 = const ImmutablePoint(1, 1);
+  print('immutablePoint1.hashCode = ' + immutablePoint1.hashCode.toString());
+  print('immutablePoint2.hashCode = ' + immutablePoint2.hashCode.toString()); // hashCode 是一样的
+  print('immutablePoint1 = $immutablePoint1, immutablePoint2 = $immutablePoint2');
+  assert(identical(immutablePoint1, immutablePoint2)); // 一样的。
 
   // 在常量上下文里，构造器前的 const 可以省略
   const pointAndLine1 = {

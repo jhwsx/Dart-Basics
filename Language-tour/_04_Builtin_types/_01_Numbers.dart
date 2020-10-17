@@ -12,7 +12,7 @@ void main() {
   var exponents = 1.42e5;
   // Dart2.1之后，整型字面量可以自动转换为小数型
   double z = 1; // 等价于 double z = 1.0;
-
+  print('z = $z');
   // 基本运算
   var a = 2;
   var b = 3;
@@ -35,6 +35,9 @@ void main() {
   // double -> String
   String piAsString = 3.14159.toStringAsFixed(2); // 保留 2 位小数
   assert(piAsString == '3.14');
+
+  var stringAsExponential = 340000.toStringAsExponential(2);
+  print('stringAsExponential = $stringAsExponential');
 
   // int 类型里定义了位运算符
   assert((3 << 1) == 6); // 按位左移

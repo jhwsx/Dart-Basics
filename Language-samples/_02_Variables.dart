@@ -8,6 +8,13 @@ void main() {
     'tags': ['saturn'],
     'url': '//path/to/saturn.jpg'
   };
+
+  print(name.runtimeType);
+  print(year.runtimeType);
+  print(antennaDiameter.runtimeType);
+  print(flybyObjects.runtimeType);
+  print(image.runtimeType);
+
   print(name);
   print(year);
   print(antennaDiameter);

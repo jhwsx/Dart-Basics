@@ -20,6 +20,7 @@ void main() {
 
   var f = () {
     print('Hello, lambda');
-  };
+  }; // 是个对象，所以才可以分配给变量。
   f(); // 执行匿名函数
+  print('f = ${f.runtimeType}'); // f = () => Null
 }

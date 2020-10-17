@@ -60,7 +60,7 @@ class Point1 {
 
   // 使用了初始化列表，在构造器类体开始之前就设置了成员变量的值。
   Point1.fromJson(Map<String, num> json)
-      : x = json['x'],
+      : x = json['x'], // 这里就是一个初始化器
         y = json['y'] {
     // 注意：The right-hand side of an initializer does not have access to this.
     print('In Point.fromJson(): ($x, $y)');

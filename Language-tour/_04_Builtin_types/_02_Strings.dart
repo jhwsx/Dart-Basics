@@ -23,7 +23,7 @@ void main() {
 
   var slogan = 'Faster ' + 'Higher ' + 'Stronger';
   assert(slogan == 'Faster Higher Stronger');
-  // == 用于字符串，比较的是字符序列是否一样。
+  // == 用于字符串，比较的是字符序列是否一样, 也就是说比较的是内容。
 
   // 字符串 * 运算
   var plus = '+';

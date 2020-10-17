@@ -11,6 +11,11 @@ void main() {
     print(object);
   }
 
+  var list = [1, 2, 3, 4, 5, 6];
+  for (var number in list) {
+    print(number);
+  }
+
   for (int month = 1; month <= 12; month++) {
     print(month);
   }

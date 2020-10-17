@@ -7,7 +7,7 @@
 // 3, 创建 mixins 须知：
 //  mixin 类只能继承自 Object;
 //  mixin 类不能有构造函数;
-//  除非你想要你的 mixin 像常规的类一样有用，使用 mixin 关键字来代替 class 关键字。
+//  除非你想要你的 mixin 像常规的类一样有用，使用 mixin 关键字来而不是 class 关键字。
 //  指定只有确定的类型可以使用 mixin（例如，这样 mixin 就可以调用它没有定义的方法了），
 //  使用 on 关键字来指定需要的超类。
 // 4, mixins 是怎么实现的？
@@ -148,7 +148,7 @@ class MySuper implements Super {
     print('MySuper method()');
   }
 }
-
+// on 限定了只有 Super 的子类才可以使用这个 Mixin
 mixin Mixin on Super {
   @override
   method() {
@@ -160,3 +160,11 @@ mixin Mixin on Super {
 class Client extends MySuper with Mixin {
 
 }
+// 编译报错：'Mixin' can't be mixed onto 'Common' because 'Common' doesn't implement 'Super'.
+// class Common {
+//
+// }
+//
+// class Customer extends Common with Mixin {
+//
+// }

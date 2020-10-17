@@ -16,8 +16,13 @@ void main() {
   var flybyObjects = ['Jupiter', 'Saturn', 'Uranus', 'Neptune'];
 
   var iterable = flybyObjects.where((name) => name.contains('tune'));
+  // 等价于
+  var iterable1 = flybyObjects.where((element) {
+    return element.contains('t');
+  });
+
   iterable.forEach(print); // print 这个顶层函数作为参数传递给 forEach。
-
+  print('-' * 20);
+  iterable1.forEach(print);
 //  flybyObjects.where((name) => name.contains('tune')).forEach(print);
-
 }

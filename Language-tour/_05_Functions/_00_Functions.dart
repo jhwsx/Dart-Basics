@@ -3,10 +3,11 @@
 
 void main() {
   print(isOdd.runtimeType); // (int) => bool
-  Function isOddFuntion = isOdd; // 函数的类型是 Function。
-  print(isOddFuntion.runtimeType); // (int) => bool
+  Function isOddFunction = isOdd; // 函数的类型是 Function。
+  print(isOddFunction.runtimeType); // (int) => bool
 
   var even = isEven(5); // 返回值推断为 dynamic，运行时类型就是 bool。
+  print(isEven.runtimeType); // (dynamic) => dynamic
   print(even.runtimeType); // bool
 }
 

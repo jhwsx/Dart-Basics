@@ -6,6 +6,7 @@ void main() {
   list.add(3);
   assert(first(list) == 1);
 }
+
 // 第一个 T 是返回类型
 T first<T>(List<T> ts) {
   T tmp = ts[0];

@@ -1,9 +1,9 @@
 // 定义一个函数
-printInteger(int aNumber) {
+void printInteger(int aNumber) {
   print('The number is $aNumber');
 }
 // 应用入口
-main() {
+void main() {
   var number = 42; // 声明并初始化一个变量
   printInteger(number); // 调用函数
 }

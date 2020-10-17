@@ -33,7 +33,7 @@ void main() {
   print('*' * 30);
 
   // 触发 noSuchMethod() 方法
-  // 如果 A 中没有重写 onSuchMethod() 方法，那么就抛出异常。
+  // 如果 A 中没有重写 noSuchMethod() 方法，那么就抛出异常。
   dynamic a = A();
   a.notExistMethod();
 

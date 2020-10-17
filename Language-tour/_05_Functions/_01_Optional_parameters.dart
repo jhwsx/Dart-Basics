@@ -10,6 +10,7 @@
 // 命名参数可以选择任何的参数传入还是不传入，而位置参数只能选择前面的传入后面的不传入，不允许前面的不传入而后面的传入。
 
 import 'package:meta/meta.dart';
+
 void main() {
   // 使用 paramName: value 来确定命名参数，注意 paraName 不可以省略。
   enableFlags(bold: true, hidden: false);
@@ -31,12 +32,10 @@ void main() {
 }
 
 // 使用 {param1, param2, ...} 来指定命名参数
-void enableFlags({bool bold, bool hidden}) {
-
-}
+void enableFlags({bool bold, bool hidden}) {}
 // 命名参数：@required 表示修饰的参数是强制的，必须提供一个实参过来
 void show(String surname, {String name, @required int age, bool gender}) {
-  print('surname=$surname, name=$name, age=$age, gender=$gender');
+  print('show(): surname=$surname, name=$name, age=$age, gender=$gender');
 }
 
 // 错误的写法示例：The required parameters are listed first, followed by any optional parameters.
@@ -45,20 +44,23 @@ void show(String surname, {String name, @required int age, bool gender}) {
 //}
 
 //  位置参数, 与命名参数的写法不同：使用[] 来包裹一系列的函数参数
-void show3(String surname, [String name,  int age, bool gender]) {
-  print('surname=$surname, name=$name, age=$age, gender=$gender');
+void show3(String surname, [String name, int age, bool gender]) {
+  print('show3():surname=$surname, name=$name, age=$age, gender=$gender');
 }
 
 // 给命名参数指定默认参数值
-void show4(String surname, {String name, @required int age, bool gender = true}) {
-  print('surname=$surname, name=$name, age=$age, gender=$gender');
+void show4(String surname,
+    {String name, @required int age, bool gender = true}) {
+  print('show4():surname=$surname, name=$name, age=$age, gender=$gender');
 }
 
 // 给位置参数制定默认参数值
-void show5(String surname, [String name = 'zhichao',  @required int age, bool gender]) {
-  print('surname=$surname, name=$name, age=$age, gender=$gender');
-}
-void show6(String surname, [String name,  @required int age, bool gender = true]) {
-  print('surname=$surname, name=$name, age=$age, gender=$gender');
+void show5(String surname,
+    [String name = 'zhichao', @required int age, bool gender]) {
+  print('show5():surname=$surname, name=$name, age=$age, gender=$gender');
 }
 
+void show6(String surname,
+    [String name, @required int age, bool gender = true]) {
+  print('show6():surname=$surname, name=$name, age=$age, gender=$gender');
+}

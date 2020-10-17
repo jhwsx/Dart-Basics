@@ -4,7 +4,7 @@ class Spacecraft {
 
   // 构造器，有把值赋给成员的语法糖
   Spacecraft(this.name, this.launchDate) {
-    // 这里些初始化的代码
+    // 这里写初始化的代码
   }
 
   // Named constructor that forwards to the default one.
@@ -12,8 +12,13 @@ class Spacecraft {
 
   Spacecraft.newInstance(String name) : this(name, null);
 
+  // 箭头语法：用于单个语句的函数
   int get launchYear => launchDate?.year; // read-only non-final property 只读非 final 属性
 
+  // 等价于
+  // int get launchYear {
+  //   return launchDate?.year;
+  // }
   void describe() {
     print('Spacecraft: $name');
     if (launchDate != null) {
@@ -31,4 +36,7 @@ void main() {
 
   var voyager3 = Spacecraft.unlaunched('Voyager III');
   voyager3.describe();
+
+  var voyager4 = Spacecraft.newInstance('Voyager II');
+  voyager4.describe();
 }

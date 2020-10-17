@@ -12,6 +12,7 @@ void main() {
   assert(list[1] == 2);
   assert(list[2] == 3); // 索引到 length - 1 结束。
   // assert(list[3] == 3); // 运行时抛出异常：RangeError (index): Invalid value: Not in range 0..2, inclusive: 3
+  // assert(list[-1] == 3); // 不能倒着取。
 
   assert(list.isEmpty == false);
 

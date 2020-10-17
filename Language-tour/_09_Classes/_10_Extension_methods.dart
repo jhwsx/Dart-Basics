@@ -30,7 +30,6 @@ import 'string_local_apis.dart';
 
 void main() {
   print("${['42'.padLeft(5)]}"); // 左边添加5个空格
-  print("${['42'.padRight(5)]}"); // 右边添加5个空格
   print('42'.parseInt()); // 这是扩展函数
 
   print(NumberParsing('3.14').parseDouble());

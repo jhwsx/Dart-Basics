@@ -1,3 +1,6 @@
+// 异步生成器函数
+// 1, 创建异步生成器函数，使用 async* 标记函数体，并且使用 yield 语句来传递值。
+// 2, 当调用生成器的 listen 方法时，生成器函数才会执行。
 void main() {
   print('create generator');
   var generator = asynchronousNaturalsTo(5);

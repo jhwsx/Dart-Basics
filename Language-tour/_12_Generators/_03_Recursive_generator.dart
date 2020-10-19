@@ -36,7 +36,7 @@ Iterable<int> naturalsDownFrom(int n) sync* {
   print('generator $n started');
   if (n > 0) {
     yield n;
-    yield* naturalsDownFrom(n - 1);
+    yield* naturalsDownFrom(n - 1); // 递归
   }
   print('generator $n ended');
 

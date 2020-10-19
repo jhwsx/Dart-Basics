@@ -4,6 +4,8 @@
 //    异步生成器：返回一个 Stream 对象
 // 3, 实现同步生成器函数，标记函数体为 sync*，并使用 yield 语句来传递值。
 //    同步生成器和 python 中的生成器概念类似。
+// 4, 对 yield 关键字的理解：
+//    “返回”一个值到序列中，但是不会停止生成器函数。
 // 参考：https://medium.com/@jelenaaa.lecic/what-are-sync-async-yield-and-yield-in-dart-defe57d06381
 void main() {
   print('create iterator');
@@ -22,13 +24,14 @@ void main() {
 create iterator
 _SyncIterable<int>
 start to iterate...
-start
+naturalsTo start
 0
 1
 2
 3
 4
-end
+naturalsTo end
+end of main
  */
 
 Iterable<int> naturalsTo(int n) sync* {

@@ -3,6 +3,7 @@
 //    同步生成器：返回一个 Iterable 对象
 //    异步生成器：返回一个 Stream 对象
 // 3, 实现同步生成器函数，标记函数体为 sync*，并使用 yield 语句来传递值。
+//    use the sync* keyword to mark the function as a synchronous generator
 //    同步生成器和 python 中的生成器概念类似。
 // 4, 对 yield 关键字的理解：
 //    “返回”一个值到序列中，但是不会停止生成器函数。

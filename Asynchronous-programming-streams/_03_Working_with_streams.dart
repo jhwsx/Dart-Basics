@@ -20,6 +20,10 @@ void main() async {
    */
 //  var lastEvenNum = await stream.lastWhere((element) => element & 1 == 0);
 //  print('lastEvenNum=$lastEvenNum');
+
+
+  var lastEvenNum = await countStream(5).lastWhere((element) => element & 1 == 0);
+  print('lastEvenNum=$lastEvenNum');
 }
 
 Stream<int> countStream(int to) async* {

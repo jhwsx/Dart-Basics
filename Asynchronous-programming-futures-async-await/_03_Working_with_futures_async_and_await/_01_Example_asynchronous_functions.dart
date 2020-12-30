@@ -5,7 +5,7 @@
     await 关键字仅仅作用在有 async 关键字的函数里。
 3,  使用 await 关键字来得到异步表达式的 completed 结果。
 4,  如果在函数里使用了 await 关键字，那么就必须在函数体前加上 async 关键字。
-5,  异步函数就是带有 label 关键字标签的函数。
+5,  异步函数就是带有 async 关键字标签的函数。
 6,  使用 await 关键字获取异步表达式的完成结果。
 7,  An async function runs synchronously until the first await keyword. This means that within an async function body,
 all synchronous code before the first await keyword executes immediately.

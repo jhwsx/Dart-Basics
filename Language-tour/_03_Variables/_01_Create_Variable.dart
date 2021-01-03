@@ -2,6 +2,13 @@ void main() {
   // name1 的类型被推断为 String
   var name1 = 'Bob';
 
+  var z; // z 是 dynamic 类型
+  z = "wzc";
+  z = 18;
+
+  var y = "wzc"; // 推断为 String 类型
+  // y = 18; // 编译报错：类型不对。
+
   // 不限定为单一类型，使用 Object 或 dynamic。
   // 这两者有一定的区别。
   dynamic name2 = 'Bob';

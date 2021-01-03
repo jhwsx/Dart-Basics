@@ -9,7 +9,7 @@ void main() {
   print(person.toString());
 
   Person nullPerson;
-  nullPerson?.gender = true; // ?. 安全调用
+  nullPerson?.gender = true; // ?. 安全调用, 和 kotlin 中的 ?. 是一样的。
 }
 
 class Person {

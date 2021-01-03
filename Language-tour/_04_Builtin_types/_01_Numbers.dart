@@ -6,6 +6,7 @@
 void main() {
   // 定义整型
   var x = 1;
+  print(x.bitLength);
   var hex = 0xDEADBEEF;
   // 定义小数型
   var y = 1.1;

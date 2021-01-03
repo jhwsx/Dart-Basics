@@ -19,7 +19,14 @@ void main() {
   // 创建一个编译期常量的list
   var constantList = const [1, 2, 3];
   // constantList[1] = -1; // 运行时报错：Unsupported operation: Cannot modify an unmodifiable list
+  // constantList.add(4); // 运行时报错：Unsupported operation: Cannot add to an unmodifiable list
+  constantList = [4, 5, 6]; // 正确的。
 
+  const List<int> l = [1, 2, 3]; // 等价于下面一行
+  const List<int> l1 = const [1, 2, 3];
+  // l.add(4); // 运行时报错：Unsupported operation: Cannot add to an unmodifiable list
+  // l[1] = 5; // Unsupported operation: Cannot modify an unmodifiable list
+  // l = [4, 5, 6]; // 编译报错：Constant variables can't be assigned a value.
 
   // Dart 2.3 introduced the spread operator (...) and the null-aware spread operator (...?),
   // which provide a concise way to insert multiple elements into a collection.
@@ -47,4 +54,19 @@ void main() {
   ];
   assert(listOfStrings[1] == '#1');
   assert(listOfStrings.length == 4);
+
+  List<int> list5 = List();
+  list5.add(1);
+  list5.add(2);
+  list5.add(3);
+  list5.add(4);
+  // iter for-in 模板
+  for (var o in list5) {
+    print(o);
+  }
+  // itar for-i 模板
+  for (var i = 0; i < list5.length; ++i) {
+    var o = list5[i];
+    print(o);
+  }
 }

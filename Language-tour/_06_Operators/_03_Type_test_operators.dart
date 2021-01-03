@@ -8,7 +8,7 @@ void main() {
 
   (emp as Person).name = "wang";
 
-  if (emp is! num) {
+  if (emp is! num) { // 在 kotlin 中是 !is
     print('emp is not a num');
   }
 

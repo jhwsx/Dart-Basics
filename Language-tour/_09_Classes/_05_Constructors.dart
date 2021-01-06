@@ -41,6 +41,14 @@ void main() {
 
   print('*' * 20 + 'factory constructor' + '*' * 20);
   Logger('wzc').log("It's a fine day, isn't it?");
+
+  // 常量构造器
+  // 使用 const 构造方法，有利于提升性能。
+  var p1 = const ImmutablePoint(1, 1);
+  var p2 = const ImmutablePoint(1, 1);
+  var p3 = const ImmutablePoint(1, 2);
+  print('p1 == p2: ${p1 == p2}'); // true
+  print('p2 == p3: ${p2 == p3}'); // false
 }
 
 class Point1 {

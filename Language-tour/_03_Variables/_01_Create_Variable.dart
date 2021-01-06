@@ -6,6 +6,10 @@ void main() {
   z = "wzc";
   z = 18;
 
+  dynamic xxx;
+  xxx = 1;
+  xxx = true;
+
   var y = "wzc"; // 推断为 String 类型
   // y = 18; // 编译报错：类型不对。
 

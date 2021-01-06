@@ -58,9 +58,7 @@ class A {
   }
 }
 
-class B with A {
-
-}
+class B with A {}
 
 // 一个类可以 mixins 多个 mixins 类
 class C1 {
@@ -74,6 +72,7 @@ class C2 {
     print('c2');
   }
 }
+
 // with 后面的 mixin 类的顺序是有影响的
 class D1 with C1, C2 {}
 
@@ -130,10 +129,7 @@ class XY = X with Y;
 
 class XYZ = XY with Z;
 
-class W extends XYZ {
-
-}
-
+class W extends XYZ {}
 
 //-------------------------------------
 class Super {
@@ -148,6 +144,7 @@ class MySuper implements Super {
     print('MySuper method()');
   }
 }
+
 // on 限定了只有 Super 的子类才可以使用这个 Mixin
 mixin Mixin on Super {
   @override
@@ -157,9 +154,7 @@ mixin Mixin on Super {
   }
 }
 
-class Client extends MySuper with Mixin {
-
-}
+class Client extends MySuper with Mixin {}
 // 编译报错：'Mixin' can't be mixed onto 'Common' because 'Common' doesn't implement 'Super'.
 // class Common {
 //

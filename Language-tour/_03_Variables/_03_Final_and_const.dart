@@ -14,6 +14,10 @@ void main() {
   final yy = 6;
   // const zz = yy; // 报错：因为 final 的 yy 是运行时才确定的值，而 zz 是编译期常量，不能拿后面才可以确定的 yy 给 zz 赋值。
 
+  final array1 = [1];
+  array1[0] = 1; // ok
+  const array2 = [1];
+  // array2[0] = 1; // 报错，Unsupported operation: Cannot modify an unmodifiable list
   // const 不仅仅用于声明常量变量，也可以用于创建常量值，还有用于创建常量的构造器
   // 任何变量都可以有一个常量值。
   var foo = const []; // 含义：foo 变量指向了空的列表常量。foo 的类型被推断为 List<dynamic>, 因为这里没有元素。

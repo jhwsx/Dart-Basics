@@ -2,7 +2,9 @@
 void main() {
   // 单引号或者双引号都可以
   var s1 = 'Single quotes work well for string literals.';
+  print(s1.runtimeType); // 打印：String
   var s2 = "Double quotes work just as well.";
+  print(s2.runtimeType); // 打印：String
   var s3 = 'It\'s easy to escape the string delimiter.';
   var s4 = "It's even easier to use the other delimiter.";
   String text = 'Hello world';
@@ -15,6 +17,11 @@ void main() {
   assert('That deserves all caps. ' + '${s.toUpperCase()} is very handy!' ==
       'That deserves all caps. ' + 'STRING INTERPOLATION is very handy!');
 
+  var congratulations = "Happy New Year";
+  var name = "willwaywang6";
+  assert("Hello $name, $congratulations" == "Hello willwaywang6, Happy New Year");
+  assert("Hello ${name}1, $congratulations" == "Hello willwaywang61, Happy New Year");
+  assert("Hello $name, ${congratulations.toUpperCase()}!" == "Hello willwaywang6, HAPPY NEW YEAR!");
   // You can concatenate strings using adjacent string literals or the + operator:
   var words = 'Study '
       'Exercise'

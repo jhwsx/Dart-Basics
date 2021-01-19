@@ -2,6 +2,8 @@ void main() {
   // name1 的类型被推断为 String
   var name1 = 'Bob';
 
+  // var String name2 = 'Bob';
+
   var z; // z 是 dynamic 类型
   z = "wzc";
   z = 18;

@@ -54,6 +54,9 @@ void main() {
   var rawStr = r'In a raw string, not even \n gets special treatment.';
   print(rawStr);
 
+  var  path = 'C:\Users\wzc\kolin';
+  print(path);
+
   // 字符串常量
   const NUM = 0;
   const FLAG = true;

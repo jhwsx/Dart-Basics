@@ -23,4 +23,12 @@ void main() {
   }; // 是个对象，所以才可以分配给变量。
   f(); // 执行匿名函数
   print('f = ${f.runtimeType}'); // f = () => Null
+
+  Comparator<int> comparator = (o1, o2) => o1.compareTo(o2);
+
+  Comparator<int> comparator2 = (o1, o2) {
+    print('xxxxxx');
+    return o1.compareTo(o2);
+  };
+
 }

@@ -2,8 +2,8 @@
 void main() {
   // Dart 类型推断 goods 是 Map<String, int>
   var goods = {"apple": 8, 'banana': 3, 'pear': 4, 'orange': 4};
-  Map<String, int> goods2 = {"apple": 8, 'banana': 3, 'pear': 4, 'orange': 4};
-
+  Map<String, int> map = {"apple": 8, 'banana': 3, 'pear': 4, 'orange': 4};
+  print(map);
   // 通过 Map 构造器创建 Map 对象
   var grades = Map();
   grades['math'] = 100;
@@ -37,7 +37,7 @@ void main() {
   assert(map4.length == 3);
 
   var isNeed = false;
-  var map5 = {"car": 200000, "bike": 100, if (isNeed) "plance": 1};
+  var map5 = {"car": 200000, "bike": 100, if (isNeed) "plane": 1};
   assert(map5.length == 2);
 
   var map6 = {for (var i = 0; i < 5; i++) "key$i": "value$i"};

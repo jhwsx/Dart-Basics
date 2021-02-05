@@ -1,19 +1,27 @@
 // 一个函数可以有两种类型的参数：必选的或可选的。（required or optional）。两种类型都有时，必选参数在前面，可选参数在后面。
-// 可选参数分两种：命名参数或位置参数。
+// 可选参数分两种：命名参数或可选的位置参数。
 // 一些 api —— 特别是 Flutter 的构造器 —— 仅仅使用命名参数，即便是强制要的参数。
 // 一个可选参数要么是命名参数要么是位置参数，但不能二者兼有。
 
 // 命名参数 vs 位置参数
 // 命名参数声明时使用 {} 包裹，而位置参数声明时使用 [] 包裹。
-// 命名参数指定默认值，就可以隔着输入命名实参了; 而位置参数只有最后一个为默认值时，才允许不输入。
+// 命名参数指定默认值，就可以隔着输入命名实参了; 而可选的位置参数只有最后一个为默认值时，才允许不输入。
 // 命名参数传入实参必须带上名字，而位置参数不允许带名字。
-// 命名参数可以选择任何的参数传入还是不传入，而位置参数只能选择前面的传入后面的不传入，不允许前面的不传入而后面的传入。
+// 命名参数可以选择任何的参数传入还是不传入，而可选的位置参数只能选择前面的传入后面的不传入，不允许前面的不传入而后面的传入。
 
 import 'package:meta/meta.dart';
 
 void main() {
   // 使用 paramName: value 来确定命名参数，注意 paraName 不可以省略。
   enableFlags(bold: true, hidden: false);
+  // enableFlags(true, hidden: false); // 错误用法
+  // enableFlags(bold: true, false); // 错误用法
+  // enableFlags(true, false); // 错误用法
+  enableFlags(bold: true);
+  enableFlags(hidden: false);
+  
+  assert(say('John', 'Hello', 'smiling') == 'John says Hello with a smiling');
+  assert(say('Peter', 'Hi') == 'Peter says Hi');
   show('wang', age: 18); // 可以隔着输入命名参数
   show('wang'); // 警告：The parameter 'age' is required.
 
@@ -32,7 +40,9 @@ void main() {
 }
 
 // 使用 {param1, param2, ...} 来指定命名参数
-void enableFlags({bool bold, bool hidden}) {}
+void enableFlags({@required bool bold, bool hidden}) {
+  print('bold=$bold, hidden=$hidden');
+}
 // 命名参数：@required 表示修饰的参数是强制的，必须提供一个实参过来
 void show(String surname, {String name, @required int age, bool gender}) {
   print('show(): surname=$surname, name=$name, age=$age, gender=$gender');
@@ -63,4 +73,12 @@ void show5(String surname,
 void show6(String surname,
     [String name, @required int age, bool gender = true]) {
   print('show6():surname=$surname, name=$name, age=$age, gender=$gender');
+}
+
+String say(String from, String msg, [String device]) {
+  var result = '$from says $msg';
+  if (device != null) {
+    result = '$result with a $device';
+  }
+  return result;
 }

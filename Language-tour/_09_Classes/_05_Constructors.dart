@@ -16,6 +16,8 @@
 //   factory 构造器不能获取 this。
 import 'dart:math';
 
+import '../_10_Generics/_06_Using_generic_methods.dart';
+
 void main() {
   var point1 = Point1(1, 1);
   print(point1);
@@ -49,6 +51,9 @@ void main() {
   var p3 = const ImmutablePoint(1, 2);
   print('p1 == p2: ${p1 == p2}'); // true
   print('p2 == p3: ${p2 == p3}'); // false
+
+  var employee1 = Employee(1, {});
+  var employee2 = Employee.fromJson({});
 }
 
 class Point1 {
@@ -132,6 +137,10 @@ class Logger {
     return _cache.putIfAbsent(name, () => Logger._internal(name));
   }
 
+  factory Logger.fromJson(Map<String, Object> json) {
+    return Logger(json['name'].toString());
+  }
+
   Logger._internal(this.name);
 
   void log(String msg) {
@@ -156,7 +165,12 @@ class Person extends Creature {
 }
 
 class Employee extends Person {
+  double salary;
   Employee.fromJson(Map data) : super.fromJson(data) { // 如果没有 : super.fromJson(data), 就编译报错：Add super constructor super.fromJson(...) invocation
+    print('In Employee fromJson');
+  }
+
+  Employee(double salary, Map data) : salary = salary, super.fromJson(data) {
     print('In Employee');
   }
 }

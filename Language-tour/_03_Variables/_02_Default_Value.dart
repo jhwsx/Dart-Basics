@@ -1,5 +1,27 @@
-void main() {
-  // 没有初始化的变量都有一个 null 的初始值。
-  int lineCount; // 即便 lineCount 是数值类型，也被初始化为 null，因为在 Dart 中一切都是对象。
-  assert(lineCount == null); // 断言成功
+// 顶层变量
+int topLevelVar;
+
+class Clazz {
+  // 类变量
+  static int classVar;
+  // 成员变量
+  int memberVar;
+
+  void method() {
+    // 局部变量
+    int localVar;
+    print('topLevelVar=$topLevelVar');
+    print('classVar=$classVar');
+    print('memberVar=$memberVar');
+    print('localVar=$localVar');
+  }
 }
+void main() {
+  Clazz clazz = Clazz();
+  clazz.method();
+}
+
+// topLevelVar=null
+// classVar=null
+// memberVar=null
+// localVar=null

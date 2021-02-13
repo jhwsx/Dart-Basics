@@ -33,7 +33,8 @@ void main() {
   print(name4);
 
   // dynamic vs Object：
-  // dynamic声明的对象编译器会提供所有可能的组合, 而Object声明的对象只能使用Object的属性与方法, 否则编译器会报错。
+  // `dynamic` 声明的变量可以调用推断类型上存在的方法以及根本不存在的方法，编译器都不会报错，只会在运行时去检查,
+  // 而`Object` 声明的对象只能使用 `Object` 的属性与方法, 否则编译器会报错。
   dynamic t;
   Object x;
 
@@ -42,4 +43,6 @@ void main() {
 
   print(t.length); // ok
   // print(x.length); // 编译错误： The getter 'length' isn't defined for the type 'Object'.
+
+  print(t.foo()); // 调用一个不存在的 foo 方法，编译时不会报错，运行时会报错：NoSuchMethodError: Class 'String' has no instance method 'foo'.
 }

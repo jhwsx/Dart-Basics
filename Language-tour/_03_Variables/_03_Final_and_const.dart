@@ -20,12 +20,14 @@ void main() {
   // array2[0] = 1; // 报错，Unsupported operation: Cannot modify an unmodifiable list
   // const 不仅仅用于声明常量变量，也可以用于创建常量值，还有用于创建常量的构造器
   // 任何变量都可以有一个常量值。
+  final fo = [];
+  fo.add(1);
   var foo = const []; // 含义：foo 变量指向了空的列表常量。foo 的类型被推断为 List<dynamic>, 因为这里没有元素。
   var foo1 = const [1]; // 含义：foo1 变量指向了列表常量。foo1 的类型被推断为 List<int>, 因为这里有元素。
   final bar = const [];// 含义：一个不可变的 bar 变量指向了空的列表常量。注意 bar 被 final 修饰了，它不可以再指向其他值了。
   const baz = []; // 这是一种省略写法，Equivalent to `const []`，等价于下面的一行。
   const baz1 = const [];
-
+  baz1.add(1);
   foo = [1, 2, 3]; // 虽然 foo 曾经指向了 const 的值，但是 foo 不是 final 的，也不是 const 的，所以可以改变它的值。
   // baz = [42]; // Error：Constant variables can't be assigned a value.
   // bar = [1]; // 编译报错：'bar', a final variable, can only be set once.

@@ -5,7 +5,7 @@ void main() {
   assert(foo() == null); // pass
   assert(boo() == null); // pass
   // assert(goo() == null); // 编译报错：This expression has a type of 'void' so its value can't be used.
-  assert(hoo() == null); // pass
+  assert(!(hoo() == null)); // pass
 }
 
 foo() {}
@@ -19,5 +19,5 @@ void goo() {
 }
 
 int hoo() {
-
+  return 0;
 }

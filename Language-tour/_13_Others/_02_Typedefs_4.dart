@@ -12,7 +12,7 @@ void compute2(int minus(int x, int y)) {
 }
 
 void compute3(Divide divide) {
-  print(divide(4,2));
+  print(divide(4, 2));
 }
 
 void main() {

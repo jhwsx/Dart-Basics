@@ -14,8 +14,8 @@ void main() {
 }
 
 class Point {
-  num x; // 没有初始化，值就是 null
-  num y;
+  num? x ; // 没有初始化，值就是 null
+  num? y;
   num z = 0; // 初始化为 0
   final num q = 1;
 }

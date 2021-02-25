@@ -65,8 +65,8 @@ class Point {
 //
 //  }
   // 使用可选参数来解决
-  num operate(num value, {String string}) {
-
+  num operate(num value, {String? string = null}) {
+    return 0;
   }
 }
 

@@ -1,4 +1,4 @@
-void printOrderMessage() async {
+printOrderMessage() async {
   print('Awaiting user order...');
   var order = await fetchUserOrder();
   print('Your order is: $order');

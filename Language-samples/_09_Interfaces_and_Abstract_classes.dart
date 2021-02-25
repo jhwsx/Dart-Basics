@@ -4,10 +4,10 @@ import '_06_Classes.dart';
 // 所以我们可以 implements 任何类
 class MockSpaceship implements Spacecraft {
   @override
-  DateTime launchDate;
+  DateTime? launchDate;
 
   @override
-  String name;
+  String name = "";
 
   @override
   void describe() {
@@ -16,7 +16,7 @@ class MockSpaceship implements Spacecraft {
 
   @override
   // TODO: implement launchYear
-  int get launchYear => null;
+  int get launchYear => 0;
 }
 
 // 抽象类

@@ -78,7 +78,7 @@ Future<void> main() async {
   var firstWhere = await stream12.firstWhere((element) => element > 2);
   print('firstWhere=$firstWhere');
   var stream13 = countStream(10);
-  var sum = await stream13.fold(0, (previous, element) => previous + element);
+  var sum = await stream13.fold(0, (previous, element) => (previous! as int) + element);
   print('sum=$sum');
   var stream14 = countStream(10);
   var result = await stream14.forEach((element) {print(element); });
@@ -95,7 +95,7 @@ Future<void> main() async {
   print('total=$total');
   // fold vs reduce in terms of empty stream
   var stream18 = countStream(0);
-  var r = await stream18.fold(0, (previous, element) => previous + element);
+  var r = await stream18.fold(0, (previous, element) => (previous! as int) + element);
   print('r=$r');
   try {
     var stream19 = countStream(0);

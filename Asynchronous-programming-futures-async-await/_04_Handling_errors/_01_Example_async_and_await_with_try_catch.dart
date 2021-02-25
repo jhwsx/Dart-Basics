@@ -4,7 +4,7 @@ Future<void> main() async {
   await printOrderMessage();
 }
 
-void printOrderMessage() async {
+printOrderMessage() async {
   try {
     var order = await fetchUserOrder();
     print('Awaiting user order...');

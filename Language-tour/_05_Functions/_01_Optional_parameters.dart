@@ -19,7 +19,7 @@ void main() {
   // enableFlags(true, false); // 错误用法
   enableFlags(bold: true);
   enableFlags(hidden: false);
-  
+
   assert(say('John', 'Hello', 'smiling') == 'John says Hello with a smiling');
   assert(say('Peter', 'Hi') == 'Peter says Hi');
   show('wang', age: 18); // 可以隔着输入命名参数
@@ -40,11 +40,13 @@ void main() {
 }
 
 // 使用 {param1, param2, ...} 来指定命名参数
-void enableFlags({@required bool bold, bool hidden}) {
+void enableFlags({bool bold = false, bool hidden = false}) {
   print('bold=$bold, hidden=$hidden');
 }
+
 // 命名参数：@required 表示修饰的参数是强制的，必须提供一个实参过来
-void show(String surname, {String name, @required int age, bool gender}) {
+void show(String surname,
+    {String name = 'wzc', int age = 18, bool gender = true}) {
   print('show(): surname=$surname, name=$name, age=$age, gender=$gender');
 }
 
@@ -54,28 +56,29 @@ void show(String surname, {String name, @required int age, bool gender}) {
 //}
 
 //  位置参数, 与命名参数的写法不同：使用[] 来包裹一系列的函数参数
-void show3(String surname, [String name, int age, bool gender]) {
+void show3(String surname,
+    [String name = 'wzc', int age = 18, bool gender = true]) {
   print('show3():surname=$surname, name=$name, age=$age, gender=$gender');
 }
 
 // 给命名参数指定默认参数值
 void show4(String surname,
-    {String name, @required int age, bool gender = true}) {
+    {String name = 'wzc', int age = 18, bool gender = true}) {
   print('show4():surname=$surname, name=$name, age=$age, gender=$gender');
 }
 
 // 给位置参数制定默认参数值
 void show5(String surname,
-    [String name = 'zhichao', @required int age, bool gender]) {
+    [String name = 'zhichao', int age = 18, bool gender = true]) {
   print('show5():surname=$surname, name=$name, age=$age, gender=$gender');
 }
 
 void show6(String surname,
-    [String name, @required int age, bool gender = true]) {
+    [String name = 'wzc', int age = 18, bool gender = true]) {
   print('show6():surname=$surname, name=$name, age=$age, gender=$gender');
 }
 
-String say(String from, String msg, [String device]) {
+String say(String from, String msg, [String device = 'phone']) {
   var result = '$from says $msg';
   if (device != null) {
     result = '$result with a $device';

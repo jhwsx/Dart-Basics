@@ -40,8 +40,8 @@ abstract class SuperPower {
 }
 
 class Man {
-  String name;
-  int age;
+  String? name;
+  int? age;
 }
 
 class SuperMan extends Man implements Flyable, SuperPower {

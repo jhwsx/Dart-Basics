@@ -1,7 +1,7 @@
 // 验证集合中的所有元素是否满足指定的条件。
 void main() {
   // 验证是否集合中所有的元素长度都大于等于 5
-  Iterable items = <String>['practice', 'makes', 'perfect'];
+  Iterable<String> items = <String>['practice', 'makes', 'perfect'];
   var allItemsLengthGreaterThanOrEqualsTo5 = isAllItemsLengthGreaterThanOrEqualsTo5(items);
   print(allItemsLengthGreaterThanOrEqualsTo5);
 

@@ -55,7 +55,7 @@ void main() {
   assert(listOfStrings[1] == '#1');
   assert(listOfStrings.length == 4);
 
-  List<int> list5 = List();
+  List<int> list5 = List.filled(0, 0, growable: true);
   list5.add(1);
   list5.add(2);
   list5.add(3);

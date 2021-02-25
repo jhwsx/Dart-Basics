@@ -6,7 +6,7 @@
 
 
 void main() {
-  var names = List<String>();
+  var names = List<String>.empty(growable: true);
   names.addAll(['Seth', 'Kathy', 'Lars']);
   // names.add(42); // 编译报错：The argument type 'int' can't be assigned to the parameter type 'String'.
 }
@@ -19,7 +19,7 @@ abstract class Cache<T> {
 class StringCache extends Cache<String> {
   @override
   String getByKey(String key) {
-
+    return '';
   }
 
   @override
@@ -31,6 +31,7 @@ class StringCache extends Cache<String> {
 class IntCache extends Cache<int> {
   @override
   int getByKey(String key) {
+    return 0;
   }
 
   @override

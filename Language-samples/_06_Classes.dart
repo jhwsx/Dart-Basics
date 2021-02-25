@@ -1,6 +1,6 @@
 class Spacecraft {
   String name;
-  DateTime launchDate;
+  DateTime? launchDate;
 
   // 构造器，有把值赋给成员的语法糖
   Spacecraft(this.name, this.launchDate) {
@@ -13,7 +13,7 @@ class Spacecraft {
   Spacecraft.newInstance(String name) : this(name, null);
 
   // 箭头语法：用于单个语句的函数
-  int get launchYear => launchDate?.year; // read-only non-final property 只读非 final 属性
+  int get launchYear => launchDate?.year ?? 0; // read-only non-final property 只读非 final 属性
 
   // 等价于
   // int get launchYear {
@@ -22,7 +22,7 @@ class Spacecraft {
   void describe() {
     print('Spacecraft: $name');
     if (launchDate != null) {
-      int years = DateTime.now().difference(launchDate).inDays ~/ 365;
+      int years = DateTime.now().difference(launchDate!).inDays ~/ 365;
       print('Launched: $launchYear ($years years ago)');
     } else {
       print('Unlaunched');

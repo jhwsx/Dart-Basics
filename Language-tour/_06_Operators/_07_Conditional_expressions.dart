@@ -8,5 +8,5 @@ void main() {
   assert(playerName('Peter') == 'Peter');
 }
 
-String playerName(String name) => name ?? "Guest";
+String playerName(String? name) => name ?? "Guest";
 

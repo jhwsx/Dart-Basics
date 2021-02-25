@@ -46,7 +46,7 @@ void main() {
   // print('42'.parseDoubleLocal()); // 在别的 dart 文件中引用不到本地扩展方法。
   // print('42'.parseDoubleLocal2()); // 在别的 dart 文件中引用不到本地扩展方法。
 
-  var list = List<int>();
+  var list = List.filled(0, 0, growable: true);
   list.add(1);
   list.add(2);
   list.add(3);

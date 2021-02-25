@@ -32,6 +32,6 @@ void main() {
 }
 
 class Person {
-  String name;
-  int age;
+  late String name;
+  late int age;
 }

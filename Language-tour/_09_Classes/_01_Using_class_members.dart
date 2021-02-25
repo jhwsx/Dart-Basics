@@ -8,14 +8,14 @@ void main() {
   person.gender = true;
   print(person.toString());
 
-  Person nullPerson;
+  Person? nullPerson = null;
   nullPerson?.gender = true; // ?. 安全调用, 和 kotlin 中的 ?. 是一样的。
 }
 
 class Person {
   String name;
   int age;
-  bool gender;
+  bool gender = false;
 
   Person(this.name, this.age);
 

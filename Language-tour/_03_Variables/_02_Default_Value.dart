@@ -1,15 +1,15 @@
 // 顶层变量
-int topLevelVar;
+int topLevelVar = 0;
 
 class Clazz {
   // 类变量
-  static int classVar;
+  static int classVar = 0;
   // 成员变量
-  int memberVar;
+  int memberVar = 0;
 
   void method() {
     // 局部变量
-    int localVar;
+    int localVar = 0;
     print('topLevelVar=$topLevelVar');
     print('classVar=$classVar');
     print('memberVar=$memberVar');

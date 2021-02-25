@@ -47,15 +47,15 @@ void main() {
 }
 
 class Point {
-  int x;
-  int y;
+  late int x;
+  late int y;
 
   Point(this.x, this.y);
 
   Point.fromJson(Map<String, int> map) {
     // return Point(map['x'], map['y']); // Constructors can't return values.
-    this.x = map['x'];
-    this.y = map['y'];
+    this.x = map['x']!;
+    this.y = map['y']!;
   }
 
   @override

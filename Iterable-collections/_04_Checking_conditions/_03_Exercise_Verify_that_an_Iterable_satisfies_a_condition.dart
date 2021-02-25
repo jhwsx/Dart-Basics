@@ -1,5 +1,5 @@
 void main() {
-  Iterable users = <User>[User('wzc', 19), User('wzj', 20), User('wcg', 7)];
+  Iterable<User> users = <User>[User('wzc', 19), User('wzj', 20), User('wcg', 7)];
   bool result1 = anyUserUnder18(users);
   print('result1=$result1');
   bool result2 = everyUserOver13(users);

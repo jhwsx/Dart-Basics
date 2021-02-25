@@ -18,19 +18,19 @@ void main() {
 }
 
 class Man {
-  String _name;
-  int _age;
-  double _salary;
-  bool _gender;
-  String _address;
+  String? _name;
+  int? _age;
+  double? _salary;
+  bool? _gender;
+  String? _address;
 }
 
 class ManBuilder {
-  String _name;
-  int _age;
-  double _salary;
-  bool _gender;
-  String _address;
+  String? _name;
+  int? _age;
+  double? _salary;
+  bool? _gender;
+  String? _address;
 
   void name(String name) {
     this._name = name;
@@ -64,19 +64,19 @@ class ManBuilder {
 }
 
 class Person {
-  String _name;
-  int _age;
-  double _salary;
-  bool _gender;
-  String _address;
+  String? _name;
+  int? _age;
+  double? _salary;
+  bool? _gender;
+  String? _address;
 }
 
 class PersonBuilder {
-  String _name;
-  int _age;
-  double _salary;
-  bool _gender;
-  String _address;
+  String? _name;
+  int? _age;
+  double? _salary;
+  bool? _gender;
+  String? _address;
 
   PersonBuilder name(String name) {
     this._name = name;

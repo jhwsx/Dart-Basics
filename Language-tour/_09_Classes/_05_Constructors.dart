@@ -57,8 +57,8 @@ void main() {
 }
 
 class Point1 {
-  num x;
-  num y;
+  late num x;
+  late num y;
 
   Point1(num x, num y) {
     this.x = x;
@@ -73,8 +73,8 @@ class Point1 {
 
   // 使用了初始化列表，在构造器类体开始之前就设置了成员变量的值。
   Point1.fromJson(Map<String, num> json)
-      : x = json['x'], // 这里就是一个初始化器
-        y = json['y'] {
+      : x = json['x']!, // 这里就是一个初始化器
+        y = json['y']! {
     // 注意：The right-hand side of an initializer does not have access to this.
     print('In Point.fromJson(): ($x, $y)');
   }
@@ -157,7 +157,7 @@ class Creature {
 }
 
 class Person extends Creature {
-  String firstName;
+  String? firstName;
 
   Person.fromJson(Map data) { // 这里调用了超类的无参构造器
     print('In Person');
@@ -165,7 +165,7 @@ class Person extends Creature {
 }
 
 class Employee extends Person {
-  double salary;
+  double salary = 0.0;
   Employee.fromJson(Map data) : super.fromJson(data) { // 如果没有 : super.fromJson(data), 就编译报错：Add super constructor super.fromJson(...) invocation
     print('In Employee fromJson');
   }

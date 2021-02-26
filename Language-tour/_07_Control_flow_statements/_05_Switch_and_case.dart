@@ -7,6 +7,8 @@ void main() {
   doByTime('dawn');
   print("-" * 20);
   doByTime('evening');
+
+  print(getWeekDayString(4));
 }
 
 void doByTime(String time) {
@@ -33,5 +35,26 @@ void doByTime(String time) {
       break;
     default:
       print('Unknown time');
+  }
+}
+
+String getWeekDayString(int weekday) {
+  switch (weekday) {
+    case 1:
+      return "星期一";
+    case 2:
+      return "星期二";
+    case 3:
+      return "星期三";
+    case 4:
+      return "星期四";
+    case 5:
+      return "星期五";
+    case 6:
+      return "星期六";
+    case 7:
+      return "星期日";
+    default:
+      throw "输入错误";
   }
 }
